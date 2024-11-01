@@ -4,38 +4,5 @@
 
 A estrutura do projeto é organizada em várias camadas que seguem o padrão de arquitetura em camadas. Abaixo está a descrição da estrutura de diretórios:
 
-/TesteOrion
-│
-├── /Banco
-│   └── Context.cs
-│
-├── /Controllers
-│   └── ProductController.cs
-│
-├── /Migrations
-│   └── [Migrações do FluentMigrator]
-│
-├── /Models
-│   └── Produto.cs
-│
-├── /Repositories
-│   └── ProductRepository.cs
-│   └── IProductRepository.cs
-│
-├── /Services
-│   └── ProductService.cs
-│   └── IProductService.cs
-│
-├── /Validators
-│   └── ProductValidator.cs
-│
-├── Dockerfile
-│
-└── TesteOrion.sln
-
-h1 2.Estrutura de Testes
-/OrionTest
-│
-├── ProdutoTests.cs
-│
+/TesteOrion │ ├── Controllers │ └── ProductController.cs │ ├── Services │ ├── ProductService.cs │ └── IProductService.cs │ ├── Repositories │ ├── ProductRepository.cs │ └── IProductRepository.cs │ ├── Models │ └── Product.cs │ ├── Migrations │ └── [Migrações do FluentMigrator] │ ├── Validators │ └── ProductValidator.cs │ ├── Tests │ └── ProductServiceTests.cs │ ├── Docker │ ├── docker-compose.yml │ └── Dockerfile │ └── TesteOrion.sln
 
