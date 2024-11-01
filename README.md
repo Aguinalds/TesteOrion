@@ -66,8 +66,6 @@ Este projeto é uma API para gerenciar um CRUD de produtos, implementada em ASP.
 
 - **Docker e Docker Compose**: Para facilitar o desenvolvimento e a execução da aplicação em ambientes isolados.
 
-- **Princípios SOLID**: O projeto foi desenvolvido seguindo esses princípios, garantindo modularidade e manutenção do código.
-
 ## 7. Plano de Testes
 
 Os testes unitários foram implementados usando xUnit e cobrem os seguintes cenários:
