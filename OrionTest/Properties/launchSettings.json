@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "OrionTest": {
+      "commandName": "Project"
+    },
+    "Container (Dockerfile)": {
+      "commandName": "Docker"
+    }
+  }
+}

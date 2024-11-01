@@ -1,4 +1,4 @@
-version: '3.8'
+version: '3.9'
 
 networks:
    testeOrion:
@@ -29,5 +29,14 @@ services:
           DB_HOST: "${DB_HOST}"
           DB_NAME: "${DB_NAME}"
           DB_MSSQL_SA_PASSWORD: "${DB_MSSQL_SA_PASSWORD}"
+        networks:
+          - testeOrion
+
+    tests:
+        build:
+          context: .
+          dockerfile: OrionTest/Dockerfile
+        depends_on:
+          - testeorion
         networks:
           - testeOrion
