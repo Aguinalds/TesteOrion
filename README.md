@@ -1,7 +1,42 @@
-# Documentação do Projeto - API de Produtos
+# API de Produtos
 
+## Descrição do Projeto
 
-## 2. Descrição das Camadas e Responsabilidades
+Este projeto é uma API para gerenciar um CRUD de produtos, implementada em ASP.NET Core. Ele segue os princípios SOLID e utiliza o Entity Framework Core para interações com o banco de dados, juntamente com FluentMigrator para gerenciamento de migrações e FluentValidation para validação de dados.
+
+## Instruções para Configurar e Executar o Projeto Localmente
+
+## 1. Clone o repositório.
+
+   git clone https://github.com/Aguinalds/TesteOrion.git
+
+## 2. Como executar o projeto Localmente
+
+  -**Primeiro**: Mudar o appsettings.json do projeto para apontar para seu banco local e não para imagem docker.
+
+  -**Segundo**: Criar o banco de dados local.
+  
+  -**Terceiro**: dotnet run -p TesteOrion/TesteOrion.csproj para rodar a API ou dotnet test para rodar os Testes.
+
+## 3. Como executar as migrations
+
+  -**Primeiro**: Criar sua primeira migration na pasta Migrations usando FluentMigrator.
+
+  -**Segundo**: Configurar na Statup a inicialização do FluentMigrator.
+
+  -**Terceiro**: Criar o banco de dados conforme o nome que você deixou no appsettings.json.
+
+## 4. Como fazer o pull das images docker.
+
+  -**Primeiro**: Rodar o comando "docker pull aguinalds/testeorion:latest" para pegar a imagem da API.
+
+  -**Segundo**:  Rodar o comando "docker pull aguinalds/testeorion-tests" para pegar a imagem dos Testes.
+
+  -**Terceiro**: Rodar o comando "docker run -e "ACCEPT_EULA=Y" -e "MSSQL_SA_PASSWORD=yourStrong(!)Password" -p 1433:1433 -d mcr.microsoft.com/mssql/server:2022-latest" para baixar a imagem  Sql e configurar o banco(A senha e a porta se forem alteradas tem que alterar no appsettings.json também.
+
+  -**Quarto**:  Rodar o comando "docker-compose --env-file .env up -d --build" para subir o container(O banco precisa ser criado na Imagem que você acabou de subir).
+
+## 5. Descrição das Camadas e Responsabilidades
 
 - **Controllers**: Gerenciam as requisições HTTP e retornam respostas. O `ProductController` gerencia as operações CRUD para produtos.
   
@@ -17,7 +52,7 @@
 
 - **OrionTests**: Contêm os testes automatizados para garantir que a lógica de negócio funcione conforme esperado, escritos com xUnit.
 
-## 3. Escolha de Tecnologias e Padrões de Projeto
+## 6. Escolha de Tecnologias e Padrões de Projeto
 
 - **ASP.NET Core**: Para construção da API, permitindo a criação de serviços web robustos.
   
@@ -33,7 +68,7 @@
 
 - **Princípios SOLID**: O projeto foi desenvolvido seguindo esses princípios, garantindo modularidade e manutenção do código.
 
-## 4. Plano de Testes
+## 7. Plano de Testes
 
 Os testes unitários foram implementados usando xUnit e cobrem os seguintes cenários:
 
@@ -45,11 +80,5 @@ Os testes unitários foram implementados usando xUnit e cobrem os seguintes cen�
 
 - **Validações**: Testa todas as regras de validação no `ProductValidator`, assegurando que dados inválidos sejam rejeitados.
 
-## 5. Como Executar o Projeto
-
-Para executar o projeto, utilize o Docker Compose para construir e iniciar os serviços:
-
-```bash
-docker-compose --env-file .env up -d --build
 
 
