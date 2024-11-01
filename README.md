@@ -38,17 +38,17 @@ Este projeto é uma API para gerenciar um CRUD de produtos, implementada em ASP.
 
 ## 5. Descrição das Camadas e Responsabilidades
 
-- **Controllers**: Gerenciam as requisições HTTP e retornam respostas. O `ProductController` gerencia as operações CRUD para produtos.
+- **Controllers**: Gerenciam as requisições HTTP e retornam respostas. O `ProdutoController` gerencia as operações CRUD para produtos.
   
-- **Services**: Implementam a lógica de negócio. O `ProductService` encapsula operações de manipulação de produtos, garantindo o cumprimento das regras de negócio.
+- **Services**: Implementam a lógica de negócio. O `ProdutoService` encapsula operações de manipulação de produtos, garantindo o cumprimento das regras de negócio.
   
-- **Repositories**: Abstraem o acesso a dados. O `ProductRepository` é responsável por realizar operações CRUD utilizando o Entity Framework Core.
+- **Repositories**: Abstraem o acesso a dados. O `ProdutoRepository` é responsável por realizar operações CRUD utilizando o Entity Framework Core.
 
-- **Models**: Contêm entidades que representam os dados. O `Product` representa um produto com propriedades como `Id`, `Name`, `Price`, etc.
+- **Models**: Contêm entidades que representam os dados. O `Produto` representa um produto com propriedades como `Id`, `Nome`, `Preco`, etc.
 
 - **Migrations**: Contêm as migrações para criar e atualizar o esquema do banco de dados usando FluentMigrator.
 
-- **Validators**: Implementam as validações de dados com FluentValidation. O `ProductValidator` garante que os dados atendam às regras de validação.
+- **Validators**: Implementam as validações de dados com FluentValidation. O `ProdutoValidator` garante que os dados atendam às regras de validação.
 
 - **OrionTests**: Contêm os testes automatizados para garantir que a lógica de negócio funcione conforme esperado, escritos com xUnit.
 
