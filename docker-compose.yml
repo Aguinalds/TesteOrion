@@ -1,0 +1,33 @@
+version: '3.8'
+
+networks:
+   testeOrion:
+     driver: bridge
+
+services:
+    testeOrionDb:
+        container_name: teste-orion-db
+        image: mcr.microsoft.com/mssql/server:2022-latest
+        ports:
+          - 8002:1433
+        environment:
+          ACCEPT_EULA: "Y"
+          MSSQL_SA_PASSWORD: "${DB_MSSQL_SA_PASSWORD}"
+        networks:
+          - testeOrion
+
+    testeorion:
+        image: ${DOCKER_REGISTRY-}testeorion
+        build:
+          context: .
+          dockerfile: TesteOrion/Dockerfile
+        ports:
+          - 8001:80
+        depends_on:
+          - testeOrionDb
+        environment:
+          DB_HOST: "${DB_HOST}"
+          DB_NAME: "${DB_NAME}"
+          DB_MSSQL_SA_PASSWORD: "${DB_MSSQL_SA_PASSWORD}"
+        networks:
+          - testeOrion

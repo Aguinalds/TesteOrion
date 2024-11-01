@@ -1,0 +1,6 @@
+@TesteOrion_HostAddress = http://localhost:5143
+
+GET {{TesteOrion_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
