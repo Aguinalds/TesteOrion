@@ -16,7 +16,7 @@ Este projeto é uma API para gerenciar um CRUD de produtos, implementada em ASP.
 
   -**Segundo**: Criar o banco de dados local.
   
-  -**Terceiro**: dotnet run -p TesteOrion/TesteOrion.csproj para rodar a API ou dotnet test para rodar os Testes.
+  -**Terceiro**: "dotnet run -p TesteOrion/TesteOrion.csproj" para rodar a API ou "dotnet test" para rodar os Testes.
 
 ## 3. Como executar as migrations
 
