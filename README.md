@@ -1,6 +1,8 @@
-# TesteOrion
+# Documentação do Projeto - API de Produtos
 
-h1. 1. Estrutura do Projeto
+## 1. Estrutura do Projeto
+
+A estrutura do projeto é organizada em várias camadas que seguem o padrão de arquitetura em camadas. Abaixo está a descrição da estrutura de diretórios:
 
 /TesteOrion
 │
